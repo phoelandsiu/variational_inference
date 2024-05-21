@@ -47,7 +47,7 @@ class VartionalInference:
         """ Return the distribution of the latent variables
         where theta is a vector that represents the parameters of the chosen variational distribution"""
         mu = theta[:0]
-        logvar = thera[:,1]
+        logvar = theta[:,1]
         z = self.reparameterize(mu, logvar)
         return z, q_dist = torch.distributions.Normal(mu, torch.exp(logvar))
     
